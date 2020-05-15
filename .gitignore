@@ -180,7 +180,7 @@ adaptive_bw_bench
 .vs/
 
 # .txt files
-*.txt
+#*.txt
 
 #project file
 .project
