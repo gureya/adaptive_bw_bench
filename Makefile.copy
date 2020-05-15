@@ -1,0 +1,17 @@
+CC=gcc
+CFLAGS=-g -O0
+LIBS=-lnuma -lpthread -lunstickymem -lrt
+
+all: adaptive_bw_bench test_hello_world bench-private
+
+adaptive_bw_bench: adaptive_bw_bench.c
+	$(CC) $(CFLAGS) adaptive_bw_bench.c -o $@ $(LIBS)
+
+test_hello_world: test_hello_world.c
+	$(CC) $(CFLAGS) test_hello_world.c -o $@ $(LIBS)
+
+bench-private: bench-private.c
+	$(CC) $(CFLAGS) bench-private.c -o $@ $(LIBS)
+
+clean:
+	rm adaptive_bw_bench test_hello_world bench-private
